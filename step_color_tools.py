@@ -145,3 +145,20 @@ if __name__ == "__main__":
                 f"TJ{'{:02d}'.format(pincount)}31530000G.step"
             ),
         )
+
+    excluded_pincounts = {11, 13, 14, 15}
+    for pincount in [
+        pincount
+        for pincount in range(2, 16)
+        if pincount not in excluded_pincounts
+    ]:
+        change_color(
+            "3D_models/connectors/"
+            f"CUI_DEVICES_TBP02R2-381-{'{:02d}'.format(pincount)}BE.step",
+            old_color="#49a3dd",
+            new_color="#609939",
+            output_file=(
+                "3D_models/connectors/"
+                f"OQ{'{:02d}'.format(pincount)}32500000G.step"
+            ),
+        )
